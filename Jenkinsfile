@@ -41,5 +41,10 @@ pipeline{
                     echo "${PRODUCTION_ENVIRONMENT} code deployed to production"
                 }
             }
+        stage(' final stage'){
+                steps{
+                    echo " code deployed to final stage"
+                }
+            }
         }
     }
