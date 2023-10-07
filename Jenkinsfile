@@ -3,8 +3,8 @@ pipeline{
     
     environment{
         DIRECTORY_PATH = "/project_directory"
-        TESTING_ENVIRONMENT = "test_env"
-        PRODUCTION_ENVIRONMENT = "prod_env"
+        test_env = "Test Env"
+        prod_env = "Prod Env"
     }
     stages{
         stage('Build'){
@@ -46,13 +46,13 @@ pipeline{
                 }
             }
            
-            stage(' Deploy'){
+            stage('Deploy'){
                 steps{
                      echo "deploy the application to a testing/staging environment in an AWS EC2 instance"
                  echo "test environment: ${test_env}"
                 }
             }
-        stage(' Integration Tests on staging'){
+        stage('Integration Tests on staging'){
                 steps{
                      echo "Running integration tests on staging environment"
                 echo "Tests complete"
